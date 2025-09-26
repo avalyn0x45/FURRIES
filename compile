@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cpp "$1" | sed -e '/^#/d' | ./zig-out/bin/furryc > out.S
+as --32 out.S libfurries.S -o out.o
+ld -m elf_i386 out.o -o out

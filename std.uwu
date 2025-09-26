@@ -1,0 +1,42 @@
+// FURRIES: Frickin UnReadable Ridiculous language Including Erroneous Syntax
+// Copyright (C) 2025 Avalyn Baldyga
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+#include "syscalls.uwu"
+#include "ascii.uwu"
+#define STDIN   $0
+#define STDOUT  $1
+#define STDERR  $2
+
+print external;
+exit external;
+syscall0 external;
+syscall1 external;
+syscall2 external;
+syscall3 external;
+syscall4 external;
+syscall5 external;
+memcpy external;
+if external;
+jump external;
+while external;
+array external;
+gt external;
+lt external;
+ge external;
+le external;
+eq external;
+ne external;
+set external;

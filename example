@@ -1,0 +1,5 @@
+hello_world data Hello, world!\n;
+
+main ();
+    _ print $hello_world;
+_ end;
