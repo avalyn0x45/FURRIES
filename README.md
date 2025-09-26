@@ -1,14 +1,14 @@
-FURRIES: Frickin UnReadable Ridiculous language Including Erroneous Syntax
-Use the `compile` script to compile and link a program.
-To build, zig 0.14.* must be installed.
+FURRIES: Frickin UnReadable Ridiculous language Including Erroneous Syntax<br/>
+Use the `compile` script to compile and link a program.<br/>
+To build, zig 0.14.* must be installed.<br/>
 
-Grammar:
+Grammar:<br/>
     All statements are in the form 
-    `[variable] [function] [up to 5 input values];`
+    `[variable] [function] [up to 5 input values];`<br/>
     This can be though of as 
     `[variable] = [function]([up to 5 input values]);`
     in a more C-style language.
-    Syntax example (simple hello world)
+    Syntax example (simple hello world)<br/>
     ``
    
      // include standard library header
