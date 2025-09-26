@@ -1,6 +1,8 @@
 FURRIES: Frickin UnReadable Ridiculous language Including Erroneous Syntax<br/>
 Use the `compile` script to compile and link a program.<br/>
-To build, zig 0.14.* must be installed.<br/>
+Only x86 is supported by the compiler, however the language is so stupidly simple that
+a compiler for another platform would be very easy to make.
+To build the compiler, zig 0.14.* must be installed.<br/>
 
 Grammar:<br/>
     All statements are in the form 
