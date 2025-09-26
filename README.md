@@ -10,8 +10,6 @@ Grammar:<br/>
     in a more C-style language.
     Syntax example (simple hello world)
 
-    ``
-   
      // include standard library header
      #include "std.uwu"
      // strings are created using the "data" function, and do not use quotes
