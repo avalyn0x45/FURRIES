@@ -106,13 +106,10 @@
         ret
     memcpy:
         endbr32
-        copy_loop:
-            test %ecx, %ecx
-            jz ret
-            subl $1, %ecx
-            movb (%ebx, %ecx), %dl
-            movb %dl, (%eax, %ecx)
-            jmp copy_loop
+        movl %ebx, %esi
+        movl %eax, %edi
+        rep movsb
+        ret
     while:
         endbr64
         subl $4, %esp

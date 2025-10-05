@@ -21,6 +21,7 @@ pub const Statement = struct {
     function: []const u8,
     inputs: [][]const u8,
     text: []const u8,
+    allocator: std.mem.Allocator,
     pub fn parse(text: []const u8, allocator: std.mem.Allocator) !Statement {
         errdefer std.debug.print("Error parsing statement: {s}\n", .{text});
         var inputs = std.ArrayList([]const u8).init(allocator);
@@ -33,11 +34,14 @@ pub const Statement = struct {
         return .{
             .var_name = var_name,
             .function = function,
-            .inputs = inputs.items,
+            .inputs = try inputs.toOwnedSlice(),
             .text = text,
+            .allocator = allocator,
         };
     }
-
+    pub fn free(self: Statement) void {
+        self.allocator.free(self.inputs);
+    }
     pub fn format(
         self: Statement,
         comptime _: []const u8,
@@ -108,15 +112,16 @@ pub fn main() !void {
             try vars.put(statement.var_name, 0xFFFFFFFF);
             continue;
         }
-
-        const existing = vars.get(statement.var_name) != null;
+        
+        var existing = vars.get(statement.var_name) != null;
+        if (statement.var_name[0] == '$') existing = true;
 
         if (!existing and opt_builtin != .@"()") {
             try vars.put(statement.var_name, vars.count());
         }
 
         defer {
-            if (opt_builtin == null)
+            if (opt_builtin == null and statement.var_name[0] != '$')
                 regs[0] = statement.var_name;
             if (std.mem.eql(u8, statement.var_name, "_")) regs[0] = null;
         }

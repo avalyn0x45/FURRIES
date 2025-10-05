@@ -1,5 +1,8 @@
 hello_world data Hello, world!\n;
+memcpy_test data Bye!!!;
 
 main ();
+    _ print $hello_world;
+    $hello_world memcpy $memcpy_test $6;
     _ print $hello_world;
 _ end;
